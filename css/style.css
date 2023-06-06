@@ -1,0 +1,126 @@
+/* GENERALI */
+main {
+    overflow: hidden;
+    height: 100vh;
+}
+
+section {
+    height: 100vh;
+    background-color: #d7d6d6;
+}
+
+/**************** Tasti per selezionare la pagina ****************/
+.main-selector {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+
+    z-index: 1;
+}
+
+.main-selector a:hover {
+    background-color: #0061fe;
+    color: white;
+}
+
+.main-selector a:last-child:hover{
+    background-color: #fabb05;
+}
+
+.main-selector a {
+    text-align: center;
+    font-size: var(--font-size-s);
+
+    border: 1px solid var(--grey);
+    border-radius: 20px;
+
+    background-color: var(--light-blue);
+    padding: 10px;
+}
+
+.main-selector a:last-child{
+    background-color: var(--light-orange);
+}
+
+.main-selector a div {
+    font-weight: 700;
+    font-size: var(--font-size-m);
+}
+
+
+/**************************** header *******************************/
+header{
+    background-color: var(--blue);
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid var(--grey);
+}
+
+#pari-dispari header{
+    background-color: var(--orange);
+}
+
+h1{
+    background-color: var(--light-grey);
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+
+    color: rgb(87, 87, 87);
+    border: 1px solid var(--grey);
+
+}
+
+/**************************** sezione palindroma*******************************/
+.input-group-text{
+    background-color: var(--light-grey);
+}
+
+.input-group{
+    width: 60%;
+    margin: auto;
+}
+
+/**************************** sezione pari-dispari*******************************/
+#pari-dispari .card-header{
+    background-color: var(--orange);
+}
+
+#play{
+    margin: 0;
+}
+
+.number{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.winner{
+    background-color: green;
+    color: white;
+}
+
+.loser{
+    background-color: red;
+    color: white;
+
+}
+
+.balance{
+    background-color: orange;
+    color: white;
+
+}
