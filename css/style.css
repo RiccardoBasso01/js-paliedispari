@@ -85,6 +85,16 @@ h1{
     margin: auto;
 }
 
+.card-subtitles.true{
+    color: green;
+    border: 2px solid green;
+}
+
+.card-subtitles.false{
+    color: red;
+    border: 2px solid red;
+}
+
 /**************************** sezione pari-dispari*******************************/
 #pari-dispari .card-header{
     background-color: var(--orange);
