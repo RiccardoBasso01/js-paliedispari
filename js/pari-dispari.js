@@ -31,15 +31,21 @@ play.addEventListener('click', function(){
     console.log('Numero del pc: ',pcRandom);
     pcNumber.innerText = pcRandom;
 
-    // Sommo i due numeri
-    const sum = userNumberInput + pcRandom;
-    console.log('Somma dei due numeri: ',sum);
-    
-    // Stabilisco se la somma è pari o dispari
-    let evenOddResult = !(sum % 2) ? 'even' : 'odd';
+    //! Con la funzione
+    const evenOddResult = isEven(userNumberInput, pcRandom);
 
-    // Confronto la scelta con il risultato
     result.innerText = evenOddResult === choice ? 'HAI VINTO!' : 'HAI PERSO!';
+
+    //! Senza la funzione
+    // // Sommo i due numeri
+    // const sum = userNumberInput + pcRandom;
+    // console.log('Somma dei due numeri: ',sum);
+    
+    // // Stabilisco se la somma è pari o dispari
+    // let evenOddResult = !(sum % 2) ? 'even' : 'odd';
+
+    // // Confronto la scelta con il risultato
+    // result.innerText = evenOddResult === choice ? 'HAI VINTO!' : 'HAI PERSO!';
 
     // Aggiunta classi al risulato
     if(evenOddResult === choice){
@@ -50,3 +56,16 @@ play.addEventListener('click', function(){
         result.classList.remove('winner');
     }
 });
+
+
+// Funzione per verificare se la somma di due numeri è pari o dispari
+function isEven(x, y){
+    x = parseInt(x);
+    y = parseInt(y);
+    const sum = x + y;
+
+    console.log(sum)
+
+    const isEven = !(sum % 2) ? 'even' : 'odd'; 
+    return isEven;
+}
