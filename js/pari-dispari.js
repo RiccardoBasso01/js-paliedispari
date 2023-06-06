@@ -1,40 +1,52 @@
-// console.log('JS pari-dispari OK');
+console.log('JS pari-dispari OK');
 
-// // Recupero elemento dal DOM
-// let userNumber = document.getElementById('user-number');
-// let pcNumber = document.getElementById('pc-number');
-// const rollDice = document.getElementById('pari-dispari');
-// const result = document.getElementById('result')
-// //Facce dei dadi
-// const userDice = document.getElementById('user-dice');
-// const pcDice = document.getElementById('pc-dice');
+// Recupero elemento dal DOM
+const evenOdd = document.getElementById('even-odd');
+const userNumber = document.getElementById('user-number');
+const pcNumber = document.getElementById('pc-number');
+const result = document.getElementById('result');
+const play = document.getElementById('play');
 
-// //Al click del bottone
-// rollDice.addEventListener('click', function(){
-   
-//     // Genero due numeri random da 1 a 6
-//    const userRandom = Math.floor((Math.random() * 6) + 1)
-//    const pcRandom = Math.floor((Math.random() * 6) + 1)
-//     console.log(userRandom, pcRandom)
-//     //Inserisco i numeri nel DOM
-//     userNumber.innerText = userRandom;
-//     pcNumber.innerText = pcRandom;
+
+//Al click del bottone
+play.addEventListener('click', function(){  
+   // Recupero la scelta fatta dall' utente
+    let choice;
+    if(evenOdd.value === 'even'){
+        choice = 'even';
+    }else if(evenOdd.value === 'odd'){
+        choice = 'odd';
+    }else{
+        return
+    }
+    console.log('pari o dispari: ', choice);
+
+    // Recupero numero inserito dall' utente e verifico che sia un numero
+   const userNumberInput = parseInt(userNumber.value)
+   console.log('Numero scelto: ', userNumberInput);
+   if(isNaN(userNumberInput)) return;
+
+    // Genero un numero random da 1 a 5 e lo inserisco nel DOM
+    const pcRandom = Math.floor((Math.random() * 5) + 1);
+    console.log('Numero del pc: ',pcRandom);
+    pcNumber.innerText = pcRandom;
+
+    // Sommo i due numeri
+    const sum = userNumberInput + pcRandom;
+    console.log('Somma dei due numeri: ',sum);
     
-//     //Controllo il vincitore
-//     let resultText = 'Hai perso!';
-//     result.className = 'card-subtitles ' + 'loser'
-//     if(userRandom > pcRandom){
-//         resultText = 'Hai vinto!';
-//         result.className = 'card-subtitles ' + 'winner'
-//     }else if(userRandom === pcRandom){
-//         resultText = 'Pareggio'
-//         result.className = 'card-subtitles ' + 'balance'
-//     }
+    // Stabilisco se la somma è pari o dispari
+    let evenOddResult = !(sum % 2) ? 'even' : 'odd';
 
-//     result.innerText = resultText
-    
-//     //Visualizzo le facce dei dadi
-//     userDice.innerHTML = `<img src="img/${userRandom}.png" width="40">`
-//     pcDice.innerHTML = `<img src="img/${pcRandom}.png" width="40">`
+    // Confronto la scelta con il risultato
+    result.innerText = evenOddResult === choice ? 'HAI VINTO!' : 'HAI PERSO!';
 
-// });
+    // Aggiunta classi al risulato
+    if(evenOddResult === choice){
+        result.classList.add('winner');
+        result.classList.remove('loser');
+    }else{
+        result.classList.add('loser');
+        result.classList.remove('winner');
+    }
+});

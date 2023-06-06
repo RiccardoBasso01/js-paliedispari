@@ -70,19 +70,16 @@
                 </div>
     
                 <div class="card-body">
-                    <div class="card-subtitles">Pari o Dispari?</div>
+                    <button id="play" class="card-subtitles">Pari o Dispari?</button>
 
                     <div class="input-group">
-                        <select class="form-select">
+                        <select id="even-odd" class="form-select">
                           <option selected>Scegli...</option>
-                          <option value="1">Pari</option>
-                          <option value="2">Dispari</option>
+                          <option  value="even">Pari</option>
+                          <option  value="odd">Dispari</option>
                         </select>
-                        <button id="play" class="card-subtitles">Gioca</button>
-                    </div>
-
-                    <div class="d-flex justify-content-center mt-3">
-                        <div id="user-number" class="number"></div>
+                        <input type="number" class="form-control" placeholder="Inserisci un numero" id="user-number" min="1" max="5">
+                        
                     </div>
 
                     <div class="card-subtitles">Numero da battere</div>

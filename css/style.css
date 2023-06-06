@@ -85,15 +85,6 @@ h1{
     margin: auto;
 }
 
-.card-subtitles.true{
-    color: green;
-    border: 2px solid green;
-}
-
-.card-subtitles.false{
-    color: red;
-    border: 2px solid red;
-}
 
 /**************************** sezione pari-dispari*******************************/
 #pari-dispari .card-header{
@@ -101,13 +92,12 @@ h1{
 }
 
 #play{
-    margin: 0;
+    margin-bottom: 1rem;
 }
 
 .number{
     width: 40px;
     height: 40px;
-    margin-right: 10px;
     background-color: orange;
     color: white;
     border-radius: 50%;
@@ -118,19 +108,16 @@ h1{
 
 }
 
-.winner{
+/**************************** Classi ai risultati *******************************/
+.card-subtitles.true,
+.card-subtitles.winner{
     background-color: green;
     color: white;
 }
 
-.loser{
+.card-subtitles.false,
+.card-subtitles.loser{
     background-color: red;
-    color: white;
-
-}
-
-.balance{
-    background-color: orange;
     color: white;
 
 }
