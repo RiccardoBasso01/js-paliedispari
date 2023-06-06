@@ -21,10 +21,10 @@ play.addEventListener('click', function(){
     }
     console.log('pari o dispari: ', choice);
 
-    // Recupero numero inserito dall' utente e verifico che sia un numero
+    // Recupero numero inserito dall' utente e verifico che sia un numero compreso tra 1 e 5
    const userNumberInput = parseInt(userNumber.value)
    console.log('Numero scelto: ', userNumberInput);
-   if(isNaN(userNumberInput)) return;
+   if(isNaN(userNumberInput) || userNumberInput > 5 || userNumberInput < 1) return;
 
     // Genero un numero random da 1 a 5 e lo inserisco nel DOM
     const pcRandom = Math.floor((Math.random() * 5) + 1);
@@ -64,7 +64,7 @@ function isEven(x, y){
     y = parseInt(y);
     const sum = x + y;
 
-    console.log(sum)
+    console.log('Somma dei due numeri: ',sum)
 
     const isEven = !(sum % 2) ? 'even' : 'odd'; 
     return isEven;
